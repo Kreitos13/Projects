@@ -1,0 +1,97 @@
+/* La caja que contiene las propiedades de las transiciones */
+#transitions-timing-function {
+    width: 700px;
+    height: 260px;
+    border-radius: 8px;
+    background: rgb(220, 246, 255);
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+/* Los cuadrados que estan dentro del contenedor de propiedades */
+.square-tf-1, 
+.square-tf-2,
+.square-tf-3,
+.square-tf-4, 
+.square-tf-5,
+.square-tf-6, 
+.square-tf-7, 
+.square-tf-8, 
+.square-tf-9, 
+.square-tf-10 {
+    width: 100px;
+    height: 100px;
+    color: rgb(1, 5, 8);
+    border-radius: 10px;
+    border: 1px solid gray;
+    background: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-timing-function: ease;
+    padding: 8px;
+    transition-duration: 0.5s;
+}
+/* La velocidad de la animación es constante durante todo el tiempo de la transición. */
+.square-tf-1:is(:hover, :focus) {
+    transition-timing-function: linear;
+    width: 130px;
+    height: 130px;
+}
+/*  La animación comienza lentamente, se acelera en el medio y se desacelera al final. */
+.square-tf-2:is(:hover, :focus) {
+    transition-timing-function: ease;
+    width: 130px;
+    height: 130px;
+}
+/* La animación comienza lentamente y se acelera a medida que avanza. */
+.square-tf-3:is(:hover, :focus) {
+    transition-timing-function: ease-in;
+    width: 130px;
+    height: 130px;
+}
+/*  La animación comienza rápidamente y se desacelera a medida que avanza. */
+.square-tf-4:is(:hover, :focus) {
+    transition-timing-function: ease-out;
+    width: 130px;
+    height: 130px;
+}
+/*  La animación comienza lentamente, se acelera en el medio y se desacelera al final. */
+.square-tf-5:is(:hover, :focus) {
+    transition-timing-function: ease-in-out;
+    width: 130px;
+    height: 130px;
+}
+/* La animacion va a escalones, depende del valor que le demos a esta. */
+.square-tf-6:is(:hover, :focus) {
+    /* Se le puede añadir el numero de steps que se desea que siga */
+    transition-timing-function: steps(3); 
+    width: 130px;
+    height: 130px;
+}
+/* Una función personalizada que permite controlar el comportamiento de la animación
+ utilizando valores de curva de Bezier. */
+.square-tf-7:is(:hover, :focus) {
+    /* Hay muchas combinaciones mas en https://cubic-bezier.com/#.17,.67,.83,.67 */
+    transition-timing-function: cubic-bezier(.77,-0.78,.83,.67);
+    width: 130px;
+    height: 130px;
+}
+.square-tf-8:is(:hover, :focus) {
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    width: 130px;
+    height: 130px;
+}
+.square-tf-9:is(:hover, :focus) {
+    transition-timing-function: cubic-bezier(0.6, -1.8, 0.735, 0.045);
+    width: 130px;
+    height: 130px;
+}
+.square-tf-10:is(:hover, :focus) {
+    transition-timing-function: cubic-bezier(0.5, -4, 1, 1);
+    width: 130px;
+    height: 130px;
+}
